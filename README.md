@@ -22,9 +22,9 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-    <groupId>com.sandbox</groupId>
+    <groupId>in.co.sandbox</groupId>
     <artifactId>api-client</artifactId>
-    <version>3.5.0-SNAPSHOT</version>
+    <version>3.4.0-SNAPSHOT</version>
 </dependency>
 ```
 
