@@ -5,7 +5,7 @@ The official repository of SDK to communicate with Sandbox APIs.
 
 Sandbox API is a set of REST APIs provides digital infrastructure you will need to quickly build and scale your fintech application in banking, savings, wealth, financial wellness, and insurance.
 
-Quicko Infosoft Pvt Ltd (c) 2020.
+Quicko Infosoft Pvt Ltd (c) 2021.
 
 ## Documentation
 
@@ -24,15 +24,15 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>in.co.sandbox</groupId>
     <artifactId>api-client</artifactId>
-    <version>3.4.0-SNAPSHOT</version>
+    <version>3.4.0-BUILD-RELEASE</version>
 </dependency>
 ```
 
-<!-- ### Others
+### Others
 
 You'll need to manually install the following JARs:
 
-- The Sandbox API Client JAR from <To be added> -->
+- The Sandbox API Client JAR from <https://github.com/TeamQuicko/sandbox-api-client/releases/latest>
 
   
 ## Usage
@@ -50,5 +50,5 @@ ApiClient client =
        ApiClientBuilder.basic().withCredentials(credentials).build();
 	   
 // Use ApiClient to call Paid APIs or to access resources on server for api user
-GoodsAndServicesTaxIdentificationNumber gstin = client.GST.searchGSTIN(gstin);
+JSONObject gstin = client.GST.GSP.PUBLIC.searchGSTIN(gstin);
 ```
