@@ -1,5 +1,5 @@
 /**
- * Copyright Apr 22, 2021, Quicko.
+ * Copyright Jun 10, 2021, Quicko.
  * All Rights Reserved.
  * Confidential Information
  * Authored by Harsh Bagadia
@@ -46,8 +46,6 @@ public class PANClient extends RestClient
 	 *            the consent
 	 * @param reason
 	 *            the reason
-	 * @param cache
-	 *            the cache
 	 * @return the pan
 	 * @throws SandboxException
 	 *             the sandbox exception
@@ -57,9 +55,8 @@ public class PANClient extends RestClient
 
 		try
 		{
-			PAN response =
-			        new PAN(super.get(ENDPOINTS.build(ENDPOINTS.URL.VERIFY_PAN, pan, consent, reason)).get("data"));
-			return response;
+			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.VERIFY_PAN, pan, consent, reason));
+			return (PAN) response.get("data");
 		}
 		catch (final IOException e)
 		{
@@ -68,7 +65,7 @@ public class PANClient extends RestClient
 	}
 
 	/**
-	 * Gets the.
+	 * Get.
 	 *
 	 * @param pan
 	 *            the pan
@@ -76,8 +73,6 @@ public class PANClient extends RestClient
 	 *            the consent
 	 * @param reason
 	 *            the reason
-	 * @param cache
-	 *            the cache
 	 * @return the pan
 	 * @throws SandboxException
 	 *             the sandbox exception
@@ -87,8 +82,8 @@ public class PANClient extends RestClient
 
 		try
 		{
-			PAN response = new PAN(super.get(ENDPOINTS.build(ENDPOINTS.URL.GET_PAN, pan, consent, reason)).toJson());
-			return response;
+			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.GET_PAN, pan, consent, reason));
+			return (PAN) response.get("data");
 		}
 		catch (final IOException e)
 		{

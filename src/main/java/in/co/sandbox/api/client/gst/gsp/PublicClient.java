@@ -44,7 +44,7 @@ public class PublicClient extends RestClient
 	 *            the gstin
 	 * @param financialYear
 	 *            the financial year
-	 * @return the api response
+	 * @return the JSON object
 	 * @throws SandboxException
 	 *             the sandbox exception
 	 */
@@ -68,7 +68,7 @@ public class PublicClient extends RestClient
 	 *
 	 * @param gstin
 	 *            the gstin
-	 * @return the api response
+	 * @return the JSON object
 	 * @throws SandboxException
 	 *             the sandbox exception
 	 */
@@ -92,7 +92,9 @@ public class PublicClient extends RestClient
 	 *
 	 * @param pan
 	 *            the pan
-	 * @return the api response
+	 * @param stateCode
+	 *            the state code
+	 * @return the JSON array
 	 * @throws SandboxException
 	 *             the sandbox exception
 	 */

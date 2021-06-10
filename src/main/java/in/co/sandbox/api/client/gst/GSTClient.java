@@ -1,8 +1,8 @@
 /**
- * Copyright Apr 22, 2021, Quicko.
+ * Copyright Jun 10, 2021, Quicko.
  * All Rights Reserved.
  * Confidential Information
- * Authored by Manav Darji
+ * Authored by Harsh Bagadia
  */
 package in.co.sandbox.api.client.gst;
 
@@ -24,6 +24,8 @@ public class GSTClient extends RestClient
 	 *
 	 * @param apiSessionCredentials
 	 *            the api session credentials
+	 * @param enableDebugLog
+	 *            the enable debug log
 	 */
 	public GSTClient(final ApiSessionCredentials apiSessionCredentials, final boolean enableDebugLog)
 	{

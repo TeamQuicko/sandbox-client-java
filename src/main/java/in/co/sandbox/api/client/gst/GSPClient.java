@@ -1,5 +1,5 @@
 /**
- * Copyright Jun 5, 2020, Quicko.
+ * Copyright Jun 10, 2021, Quicko.
  * All Rights Reserved.
  * Confidential Information
  * Authored by Harsh Bagadia
@@ -25,6 +25,8 @@ public class GSPClient extends RestClient
 	 *
 	 * @param sessionCredentials
 	 *            the session credentials
+	 * @param enableDebugLog
+	 *            the enable debug log
 	 */
 	public GSPClient(final ApiSessionCredentials sessionCredentials, final boolean enableDebugLog)
 	{

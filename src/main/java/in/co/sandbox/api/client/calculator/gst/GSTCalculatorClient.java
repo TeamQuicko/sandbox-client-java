@@ -1,8 +1,8 @@
 /**
- * Copyright Apr 29, 2021, Quicko.
+ * Copyright Jun 10, 2021, Quicko.
  * All Rights Reserved.
  * Confidential Information
- * Authored by Krutarth Trivedi
+ * Authored by Harsh Bagadia
  */
 package in.co.sandbox.api.client.calculator.gst;
 
@@ -18,13 +18,13 @@ import in.co.sandbox.api.types.ENDPOINTS;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class GSTClient.
+ * The Class GSTCalculatorClient.
  */
 public class GSTCalculatorClient extends RestClient
 {
 
 	/**
-	 * Instantiates a new GST client.
+	 * Instantiates a new GST calculator client.
 	 *
 	 * @param sessionCredentials
 	 *            the session credentials
@@ -37,10 +37,11 @@ public class GSTCalculatorClient extends RestClient
 	}
 
 	/**
-	 * GST HSN Lookup.
+	 * Gets the item details.
 	 *
 	 * @param key
-	 * @return the api response
+	 *            the key
+	 * @return the item details
 	 * @throws SandboxException
 	 *             the sandbox exception
 	 */
