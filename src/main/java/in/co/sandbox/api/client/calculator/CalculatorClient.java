@@ -24,7 +24,7 @@ public class CalculatorClient
 	/** The tds. */
 	public TDSCalculatorClient TDS;
 
-	public GSTCalculatorClient GST_CALC;
+	public GSTCalculatorClient GST;
 
 	/**
 	 * Instantiates a new calculator client.
@@ -40,7 +40,7 @@ public class CalculatorClient
 
 		this.TDS = new TDSCalculatorClient(sessionCredentials, enableDebugLog);
 
-		this.GST_CALC = new GSTCalculatorClient(sessionCredentials, enableDebugLog);
+		this.GST = new GSTCalculatorClient(sessionCredentials, enableDebugLog);
 	}
 
 }

@@ -30,8 +30,10 @@ public class TDSCalculatorClient extends RestClient
 	/**
 	 * Instantiates a new TDS calculator client.
 	 *
-	 * @param sessionCredentials the session credentials
-	 * @param enableDebugLog the enable debug log
+	 * @param sessionCredentials
+	 *            the session credentials
+	 * @param enableDebugLog
+	 *            the enable debug log
 	 */
 	public TDSCalculatorClient(final ApiSessionCredentials sessionCredentials, final boolean enableDebugLog)
 	{
@@ -42,16 +44,23 @@ public class TDSCalculatorClient extends RestClient
 	/**
 	 * Calculate tds.
 	 *
-	 * @param deducteeType the deductee type
-	 * @param isPanAvailable the is pan available
-	 * @param residentialStatus the residential status
-	 * @param section the section
-	 * @param creditAmount the credit amount
-	 * @param creditDate the credit date
+	 * @param deducteeType
+	 *            the deductee type
+	 * @param isPanAvailable
+	 *            the is pan available
+	 * @param residentialStatus
+	 *            the residential status
+	 * @param section
+	 *            the section
+	 * @param creditAmount
+	 *            the credit amount
+	 * @param creditDate
+	 *            the credit date
 	 * @return the api response
-	 * @throws SandboxException the sandbox exception
+	 * @throws SandboxException
+	 *             the sandbox exception
 	 */
-	public ApiResponse calculateTds(final String deducteeType, final Boolean isPanAvailable,
+	public JSONObject calculateTds(final String deducteeType, final Boolean isPanAvailable,
 	        final String residentialStatus, final String section, final BigDecimal creditAmount,
 	        final DateTime creditDate) throws SandboxException
 	{
@@ -74,7 +83,7 @@ public class TDSCalculatorClient extends RestClient
 			try
 			{
 				ApiResponse response = super.postForGet(ENDPOINTS.build(ENDPOINTS.URL.CALCULATE_TDS), request);
-				return response;
+				return response.get("data");
 			}
 			catch (final IOException e)
 			{

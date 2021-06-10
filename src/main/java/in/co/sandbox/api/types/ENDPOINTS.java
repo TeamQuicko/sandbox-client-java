@@ -90,40 +90,39 @@ public final class ENDPOINTS
 	    /* PAN ENDPOINTS */
 
 		/** The get pan. */
-		GET_PAN("/pans/{pan}?consent={consent}&reason={reason}&uuid={uuid}"),
+		GET_PAN("/pans/{pan}?consent={consent}&reason={reason}"),
 
 		/** The verify pan. */
-		VERIFY_PAN("/pans/{pan}/verify?consent={consent}&reason={reason}&uuid={uuid}"),
+		VERIFY_PAN("/pans/{pan}/verify?consent={consent}&reason={reason}"),
 
 		/** The get pan aadhaar link status. */
 		GET_PAN_AADHAAR_LINK_STATUS("/pans/{pan}/pan-aadhaar-status?aadhaar_number={aadhaar_number}"),
 
 	    /* GST ENDPOINTS */
 
-		/**  The track GST Return. */
+		/** The track GST Return. */
 		TRACK_GST_RETURN("/gsp/public/gstr?gstin={gstin}&financial_year={financial_year}"),
 
-		/**  The Search GSTIN. */
+		/** The Search GSTIN. */
 		SEARCH_GSTIN("/gsp/public/gstin/{gstin}"),
 
-		/**  The Search GSTIN by PAN. */
-		SEARCH_GSTIN_BY_PAN("/gsp/public/pan/{pan}"),
-		
-		
+		/** The Search GSTIN by PAN. */
+		SEARCH_GSTIN_BY_PAN("/gsp/public/pan/{pan}?state_code={state_code}"),
+
 		GST_ITEM_CODE_LOOKUP("/gst-portal/services/items?key={key}"),
 
 	    /* BANK ENDPOINTS */
 
-		/**  The Fetch Bank Details by IFSC. */
+		/** The Fetch Bank Details by IFSC. */
 		FETCH_BANK_DETAILS_BY_IFSC("/bank/{ifsc}"),
 
-		/**  Verify Bank Account. */
+		/** Verify Bank Account. */
 		VERIFY_BANK_ACCOUNT("/bank/{ifsc}/accounts/{account_number}/verify?name={name}&mobile={mobile}"),
 
 	    /* CALCULATOR ENDPOINTS */
 
 		/** The calculate tds. */
-    	CALCULATE_TDS("/calculators/tds"),
+		CALCULATE_TDS("/calculators/tds"),
 
 		/** The calculate company registration cost. */
 		CALCULATE_COMPANY_REGISTRATION_COST(

@@ -7,7 +7,8 @@
 package in.co.sandbox.api.client.pan;
 
 import java.io.IOException;
-import java.util.UUID;
+
+import org.json.JSONObject;
 
 import in.co.sandbox.api.auth.ApiSessionCredentials;
 import in.co.sandbox.api.beans.ApiResponse;
@@ -51,21 +52,13 @@ public class PANClient extends RestClient
 	 * @throws SandboxException
 	 *             the sandbox exception
 	 */
-	public PAN verify(final String pan, final String consent, final String reason, final Boolean cache)
-	        throws SandboxException
+	public PAN verify(final String pan, final String consent, final String reason) throws SandboxException
 	{
-
-		String uuid = null;
-
-		if (cache != null && !cache)
-		{
-			uuid = UUID.randomUUID().toString();
-		}
 
 		try
 		{
 			PAN response =
-			        new PAN(super.get(ENDPOINTS.build(ENDPOINTS.URL.VERIFY_PAN, pan, consent, reason, uuid)).toJson());
+			        new PAN(super.get(ENDPOINTS.build(ENDPOINTS.URL.VERIFY_PAN, pan, consent, reason)).get("data"));
 			return response;
 		}
 		catch (final IOException e)
@@ -89,21 +82,12 @@ public class PANClient extends RestClient
 	 * @throws SandboxException
 	 *             the sandbox exception
 	 */
-	public PAN get(final String pan, final String consent, final String reason, final Boolean cache)
-	        throws SandboxException
+	public PAN get(final String pan, final String consent, final String reason) throws SandboxException
 	{
-
-		String uuid = null;
-
-		if (cache != null && !cache)
-		{
-			uuid = UUID.randomUUID().toString();
-		}
 
 		try
 		{
-			PAN response =
-			        new PAN(super.get(ENDPOINTS.build(ENDPOINTS.URL.GET_PAN, pan, consent, reason, uuid)).toJson());
+			PAN response = new PAN(super.get(ENDPOINTS.build(ENDPOINTS.URL.GET_PAN, pan, consent, reason)).toJson());
 			return response;
 		}
 		catch (final IOException e)
@@ -124,14 +108,14 @@ public class PANClient extends RestClient
 	 * @throws SandboxException
 	 *             the sandbox exception
 	 */
-	public ApiResponse getAadharLinkStatus(final String pan, final String aadharNumber) throws SandboxException
+	public JSONObject getAadharLinkStatus(final String pan, final String aadharNumber) throws SandboxException
 	{
 
 		try
 		{
 			ApiResponse response =
 			        super.get(ENDPOINTS.build(ENDPOINTS.URL.GET_PAN_AADHAAR_LINK_STATUS, pan, aadharNumber));
-			return response;
+			return response.get("data");
 		}
 		catch (IOException e)
 		{

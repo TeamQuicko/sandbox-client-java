@@ -9,6 +9,8 @@ package in.co.sandbox.api.client.calculator.roc;
 import java.io.IOException;
 import java.math.BigDecimal;
 
+import org.json.JSONObject;
+
 import in.co.sandbox.api.auth.ApiSessionCredentials;
 import in.co.sandbox.api.beans.ApiResponse;
 import in.co.sandbox.api.client.RestClient;
@@ -25,8 +27,10 @@ public class ROCCalculatorClient extends RestClient
 	/**
 	 * Instantiates a new ROC calculator client.
 	 *
-	 * @param sessionCredentials the session credentials
-	 * @param enableDebugLog the enable debug log
+	 * @param sessionCredentials
+	 *            the session credentials
+	 * @param enableDebugLog
+	 *            the enable debug log
 	 */
 	public ROCCalculatorClient(final ApiSessionCredentials sessionCredentials, final boolean enableDebugLog)
 	{
@@ -37,14 +41,19 @@ public class ROCCalculatorClient extends RestClient
 	/**
 	 * Calculate company registration cost.
 	 *
-	 * @param incorporation_class the incorporation class
-	 * @param state the state
-	 * @param directors the directors
-	 * @param share_capital the share capital
+	 * @param incorporation_class
+	 *            the incorporation class
+	 * @param state
+	 *            the state
+	 * @param directors
+	 *            the directors
+	 * @param share_capital
+	 *            the share capital
 	 * @return the api response
-	 * @throws SandboxException the sandbox exception
+	 * @throws SandboxException
+	 *             the sandbox exception
 	 */
-	public ApiResponse calculateCompanyRegistrationCost(final String incorporation_class, final String state,
+	public JSONObject calculateCompanyRegistrationCost(final String incorporation_class, final String state,
 	        final Integer directors, final BigDecimal share_capital) throws SandboxException
 	{
 
@@ -57,7 +66,7 @@ public class ROCCalculatorClient extends RestClient
 				ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.CALCULATE_COMPANY_REGISTRATION_COST,
 				        incorporation_class, state, directors, share_capital));
 
-				return response;
+				return response.get("data");
 
 			}
 			catch (final IOException e)
@@ -74,14 +83,19 @@ public class ROCCalculatorClient extends RestClient
 	/**
 	 * Calculate partnership registration cost.
 	 *
-	 * @param incorporation_class the incorporation class
-	 * @param state the state
-	 * @param partners the partners
-	 * @param contribution the contribution
+	 * @param incorporation_class
+	 *            the incorporation class
+	 * @param state
+	 *            the state
+	 * @param partners
+	 *            the partners
+	 * @param contribution
+	 *            the contribution
 	 * @return the api response
-	 * @throws SandboxException the sandbox exception
+	 * @throws SandboxException
+	 *             the sandbox exception
 	 */
-	public ApiResponse calculatePartnershipRegistrationCost(final String incorporation_class, final String state,
+	public JSONObject calculatePartnershipRegistrationCost(final String incorporation_class, final String state,
 	        final Integer partners, final BigDecimal contribution) throws SandboxException
 	{
 
@@ -94,7 +108,7 @@ public class ROCCalculatorClient extends RestClient
 				ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.CALCULATE_PARTNERSHIP_REGISTRATION_COST,
 				        incorporation_class, state, partners, contribution));
 
-				return response;
+				return response.get("data");
 
 			}
 			catch (final IOException e)

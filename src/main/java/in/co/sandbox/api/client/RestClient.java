@@ -8,8 +8,6 @@
 package in.co.sandbox.api.client;
 
 import com.auth0.jwt.JWT;
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParser;
 
 import java.io.IOException;
 import java.util.Date;

@@ -8,6 +8,8 @@ package in.co.sandbox.api.client.calculator.gst;
 
 import java.io.IOException;
 
+import org.json.JSONObject;
+
 import in.co.sandbox.api.auth.ApiSessionCredentials;
 import in.co.sandbox.api.beans.ApiResponse;
 import in.co.sandbox.api.client.RestClient;
@@ -42,13 +44,13 @@ public class GSTCalculatorClient extends RestClient
 	 * @throws SandboxException
 	 *             the sandbox exception
 	 */
-	public ApiResponse getItemDetails(final String key) throws SandboxException
+	public JSONObject getItemDetails(final String key) throws SandboxException
 	{
 
 		try
 		{
 			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.GST_ITEM_CODE_LOOKUP, key));
-			return response;
+			return response.get("data");
 		}
 		catch (final IOException e)
 		{

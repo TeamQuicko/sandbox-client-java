@@ -8,7 +8,6 @@ package in.co.sandbox.api.beans;
 
 import java.io.Serializable;
 
-import org.joda.time.DateTimeZone;
 import org.json.JSONException;
 import org.json.JSONObject;
 

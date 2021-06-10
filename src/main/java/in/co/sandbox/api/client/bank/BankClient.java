@@ -26,8 +26,10 @@ public class BankClient extends RestClient
 	/**
 	 * Instantiates a new bank client.
 	 *
-	 * @param sessionCredentials the session credentials
-	 * @param enableDebugLog the enable debug log
+	 * @param sessionCredentials
+	 *            the session credentials
+	 * @param enableDebugLog
+	 *            the enable debug log
 	 */
 	public BankClient(final ApiSessionCredentials sessionCredentials, final boolean enableDebugLog)
 	{
@@ -37,9 +39,11 @@ public class BankClient extends RestClient
 	/**
 	 * Fetch bank details by ifsc.
 	 *
-	 * @param ifsc the ifsc
+	 * @param ifsc
+	 *            the ifsc
 	 * @return the JSON object
-	 * @throws SandboxException the sandbox exception
+	 * @throws SandboxException
+	 *             the sandbox exception
 	 */
 	public JSONObject fetchBankDetailsByIfsc(final String ifsc) throws SandboxException
 	{
@@ -47,7 +51,7 @@ public class BankClient extends RestClient
 		{
 			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.FETCH_BANK_DETAILS_BY_IFSC, ifsc));
 
-			return response.toJson();
+			return response.get("data");
 		}
 		catch (final IOException e)
 		{
@@ -59,12 +63,17 @@ public class BankClient extends RestClient
 	/**
 	 * Verify bank account.
 	 *
-	 * @param ifsc the ifsc
-	 * @param accountNumber the account number
-	 * @param name the name
-	 * @param mobile the mobile
+	 * @param ifsc
+	 *            the ifsc
+	 * @param accountNumber
+	 *            the account number
+	 * @param name
+	 *            the name
+	 * @param mobile
+	 *            the mobile
 	 * @return the JSON object
-	 * @throws SandboxException the sandbox exception
+	 * @throws SandboxException
+	 *             the sandbox exception
 	 */
 	public JSONObject verifyBankAccount(final String ifsc, final String accountNumber, final String name,
 	        final String mobile) throws SandboxException

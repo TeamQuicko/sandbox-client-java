@@ -28,7 +28,7 @@ public class ApiClientExample
 			String reason = "For opening Demat account";
 
 			// Get PAN details using PAN (Basic) API
-			System.out.println(client.PAN.verify(pan, consent, reason, true).toJson().toString());
+			System.out.println(client.PAN.verify(pan, consent, reason).toJson().toString());
 		}
 		catch (SandboxException sE)
 		{
