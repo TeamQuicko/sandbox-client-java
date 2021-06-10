@@ -32,7 +32,7 @@ Add this dependency to your project's POM:
 
 You'll need to manually install the following JARs:
 
-- The Sandbox API Client JAR from <https://github.com/TeamQuicko/sandbox-api-client/releases/latest>
+- The Sandbox API Client JAR from <https://github.com/TeamQuicko/sandbox-client-java/releases/latest>
 
   
 ## Usage
