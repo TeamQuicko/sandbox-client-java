@@ -56,7 +56,7 @@ public class PANClient extends RestClient
 		try
 		{
 			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.VERIFY_PAN, pan, consent, reason));
-			return (PAN) response.get("data");
+			return new PAN(response.get("data"));
 		}
 		catch (final IOException e)
 		{
@@ -83,7 +83,7 @@ public class PANClient extends RestClient
 		try
 		{
 			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.GET_PAN, pan, consent, reason));
-			return (PAN) response.get("data");
+			return new PAN(response.get("data"));
 		}
 		catch (final IOException e)
 		{

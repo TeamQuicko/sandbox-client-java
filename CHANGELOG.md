@@ -1,5 +1,8 @@
 # Changelog
 
+## v3.4.1 - 12-06-2021
+* PAN API client bug fix
+
 ## v3.4.0 - 10-06-2021
 * Initial API Client step up
 * Improved API Client methods

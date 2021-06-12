@@ -40,7 +40,7 @@
 		<connection>scm:git:git://github.com/TeamQuicko/sandbox-client-java.git</connection>
 		<developerConnection>scm:git:git@github.com:TeamQuicko/sandbox-client-java.git</developerConnection>
 		<url>https://github.com/TeamQuicko/sandbox-client-java</url>
-		<tag>3.4.0-BUILD-RELEASE</tag>
+		<tag>3.4.1-BUILD-RELEASE</tag>
 	</scm>
 
 	<developers>
@@ -54,10 +54,6 @@
 				<role>developer</role>
 			</roles>
 			<timezone>+5:30</timezone>
-
-			<properties>
-				<picUrl>https://cdn.quicko.com/assets/images/logo.svg</picUrl>
-			</properties>
 		</developer>
 	</developers>
 

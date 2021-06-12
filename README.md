@@ -24,7 +24,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>in.co.sandbox</groupId>
     <artifactId>api-client</artifactId>
-    <version>3.4.0-BUILD-RELEASE</version>
+    <version>3.4.1-BUILD-RELEASE</version>
 </dependency>
 ```
 
