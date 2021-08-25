@@ -11,8 +11,8 @@
 	</licenses>
 
 	<groupId>in.co.sandbox</groupId>
-	<artifactId>api-client</artifactId>
-	<version>3.4.2-BUILD-SNAPSHOT</version>
+	<artifactId>api-client-java</artifactId>
+	<version>1.0.1-BUILD-SNAPSHOT</version>
 	<name>api-client</name>
 	<description>Sandbox API client</description>
 	<packaging>jar</packaging>
@@ -40,7 +40,7 @@
 		<connection>scm:git:git://github.com/TeamQuicko/sandbox-client-java.git</connection>
 		<developerConnection>scm:git:git@github.com:TeamQuicko/sandbox-client-java.git</developerConnection>
 		<url>https://github.com/TeamQuicko/sandbox-client-java</url>
-		<tag>3.4.1-BUILD-RELEASE</tag>
+		<tag>1.0.0-BUILD-RELEASE</tag>
 	</scm>
 
 	<developers>

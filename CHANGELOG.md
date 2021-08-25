@@ -1,13 +1,12 @@
 # Changelog
 
-## v3.4.1 - 12-06-2021
-* PAN API client bug fix
-
-## v3.4.0 - 10-06-2021
+## v1.0.0 - 20-08-2021
 * Initial API Client step up
 * Improved API Client methods
 * Sandbox Client Builder added
 * GST Compliance - Public APIs added
-* PAN APIs added
+* Tax payer Verification  APIs added
 * Bank Verification APIs added
 * Calculator APIs added
+* Tax payer Verification API client bug fix
+* GSTIN API client added

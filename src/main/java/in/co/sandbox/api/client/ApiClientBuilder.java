@@ -38,10 +38,10 @@ public final class ApiClientBuilder
 	private static OkHttpClient client;
 
 	/** The user agent. */
-	private static String USER_AGENT = "java/api-core/3.5.0";
+	private static String USER_AGENT = "java/api-core/1.0.0";
 
 	/** The api version. */
-	private static String API_VERSION = "3.5.0";
+	private static String API_VERSION = "1.0.0";
 
 	static
 	{

@@ -42,10 +42,10 @@ public abstract class RestClient
 	protected ApiSessionCredentials sessionCredentials;
 
 	/** The user agent. */
-	protected String USER_AGENT = "java/api-core/3.5.0";
+	protected String USER_AGENT = "java/api-core/1.0.0";
 
 	/** The api version. */
-	protected String API_VERSION = "3.5.0";
+	protected String API_VERSION = "1.0.0";
 
 	/** The client. */
 	protected OkHttpClient client;

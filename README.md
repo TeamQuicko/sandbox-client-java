@@ -23,8 +23,8 @@ Add this dependency to your project's POM:
 ```xml
 <dependency>
     <groupId>in.co.sandbox</groupId>
-    <artifactId>api-client</artifactId>
-    <version>3.4.1-BUILD-RELEASE</version>
+    <artifactId>api-client-java</artifactId>
+    <version>1.0.0-BUILD-RELEASE</version>
 </dependency>
 ```
 

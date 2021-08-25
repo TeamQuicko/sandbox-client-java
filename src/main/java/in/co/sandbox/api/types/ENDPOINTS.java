@@ -1,8 +1,8 @@
 /**
- * Copyright Apr 22, 2021, Quicko.
+ * Copyright Aug 20, 2021, Quicko.
  * All Rights Reserved.
  * Confidential Information
- * Authored by Manav Darji
+ * Authored by Harsh Bagadia
  */
 package in.co.sandbox.api.types;
 
@@ -109,6 +109,15 @@ public final class ENDPOINTS
 		/** The Search GSTIN by PAN. */
 		SEARCH_GSTIN_BY_PAN("/gsp/public/pan/{pan}?state_code={state_code}"),
 
+	    /** Portal API. */
+
+		/** The gst portal generate otp. */
+		GST_PORTAL_GENERATE_OTP("/gst-portal/tax-payers/{gstin}/otp"),
+
+		/** The gst portal verify otp. */
+		GST_PORTAL_VERIFY_OTP("/gst-portal/tax-payers/{gstin}/otp/verify?otp={otp}"),
+
+		/** The gst item code lookup. */
 		GST_ITEM_CODE_LOOKUP("/gst-portal/services/items?key={key}"),
 
 	    /* BANK ENDPOINTS */
