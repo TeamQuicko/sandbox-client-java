@@ -27,7 +27,7 @@ public class ApiClient
 
 	/** The Calculator. */
 	public CalculatorClient Calculator;
-	
+
 	/** The gst. */
 	public GSTClient GST;
 
@@ -47,7 +47,7 @@ public class ApiClient
 		this.BANK = new BankClient(sessionCredentials, enableDebugLog);
 
 		this.Calculator = new CalculatorClient(sessionCredentials, enableDebugLog);
-		
+
 		this.GST = new GSTClient(sessionCredentials, enableDebugLog);
 
 	}

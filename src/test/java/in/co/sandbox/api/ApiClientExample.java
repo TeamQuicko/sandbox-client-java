@@ -1,4 +1,4 @@
-package com.sandbox.api;
+package in.co.sandbox.api;
 
 import org.json.JSONException;
 
@@ -30,17 +30,17 @@ public class ApiClientExample
 			// Get PAN details using PAN (Basic) API
 			System.out.println(client.PAN.verify(pan, consent, reason).toJson().toString());
 		}
-		catch (SandboxException sE)
+		catch (final SandboxException sE)
 		{
 			System.out.println(sE.getMessage());
 		}
-		catch (JSONException je)
+		catch (final JSONException je)
 		{
 			// handle Exception
 			je.printStackTrace();
 
 		}
-		catch (Exception e)
+		catch (final Exception e)
 		{
 			// handle Exception
 			e.printStackTrace();

@@ -98,9 +98,11 @@ public final class ApiClientBuilder
 	/**
 	 * Builds the.
 	 *
-	 * @param enableDebugLog the enable debug log
+	 * @param enableDebugLog
+	 *            the enable debug log
 	 * @return the api client
-	 * @throws SandboxException the sandbox exception
+	 * @throws SandboxException
+	 *             the sandbox exception
 	 */
 	public ApiClient build(final boolean enableDebugLog) throws SandboxException
 	{
@@ -143,10 +145,13 @@ public final class ApiClientBuilder
 	/**
 	 * Builds the.
 	 *
-	 * @param accessToken the access token
-	 * @param enableDebugLog the enable debug log
+	 * @param accessToken
+	 *            the access token
+	 * @param enableDebugLog
+	 *            the enable debug log
 	 * @return the api client
-	 * @throws SandboxException the sandbox exception
+	 * @throws SandboxException
+	 *             the sandbox exception
 	 */
 	public ApiClient build(final String accessToken, final boolean enableDebugLog) throws SandboxException
 	{

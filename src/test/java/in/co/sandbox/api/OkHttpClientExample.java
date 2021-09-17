@@ -1,4 +1,4 @@
-package com.sandbox.api;
+package in.co.sandbox.api;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -86,19 +86,19 @@ public class OkHttpClientExample
 			System.out.println(pan);
 
 		}
-		catch (JSONException je)
+		catch (final JSONException je)
 		{
 			// handle Exception
 			je.printStackTrace();
 
 		}
-		catch (IOException ioE)
+		catch (final IOException ioE)
 		{
 			// handle Exception
 			ioE.printStackTrace();
 
 		}
-		catch (Exception e)
+		catch (final Exception e)
 		{
 			// handle Exception
 			e.printStackTrace();

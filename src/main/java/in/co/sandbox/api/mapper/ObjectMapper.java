@@ -17,7 +17,7 @@ import com.fasterxml.jackson.datatype.jsonorg.JsonOrgModule;
 public class ObjectMapper extends com.fasterxml.jackson.databind.ObjectMapper
 {
 
-	/**  TODO Auto-generated JavaDoc. */
+	/** TODO Auto-generated JavaDoc. */
 	private static final long serialVersionUID = 1123276100501474040L;
 
 	/**

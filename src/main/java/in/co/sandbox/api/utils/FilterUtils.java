@@ -18,9 +18,11 @@ public class FilterUtils
 	/**
 	 * List to CSV.
 	 *
-	 * @param list the list
+	 * @param list
+	 *            the list
 	 * @return the string
-	 * @throws IllegalArgumentException the illegal argument exception
+	 * @throws IllegalArgumentException
+	 *             the illegal argument exception
 	 */
 	public static String listToCSV(final List<String> list) throws IllegalArgumentException
 	{

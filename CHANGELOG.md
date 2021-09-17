@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.0.1 - 17-09-2021
+*  latest artifact for maven central
+
 ## v1.0.0 - 20-08-2021
 * Initial API Client step up
 * Improved API Client methods

@@ -49,5 +49,4 @@ public class ConverterException extends Exception
 		logger.error(msg, cause);
 	}
 
-	
 }
