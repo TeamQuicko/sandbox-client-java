@@ -12,7 +12,7 @@
 
 	<groupId>in.co.sandbox</groupId>
 	<artifactId>api-client-java</artifactId>
-	<version>1.0.1-BUILD-RELEASE</version>
+	<version>1.0.2-BUILD-SNAPSHOT</version>
 	<name>api-client</name>
 	<description>Sandbox API client</description>
 	<packaging>jar</packaging>
