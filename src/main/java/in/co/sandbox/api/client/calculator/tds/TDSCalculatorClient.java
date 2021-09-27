@@ -19,6 +19,7 @@ import in.co.sandbox.api.beans.ApiResponse;
 import in.co.sandbox.api.client.RestClient;
 import in.co.sandbox.api.exception.SandboxException;
 import in.co.sandbox.api.types.ENDPOINTS;
+import in.co.sandbox.api.types.ENDPOINTS.Environment;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -82,7 +83,10 @@ public class TDSCalculatorClient extends RestClient
 
 			try
 			{
-				ApiResponse response = super.postForGet(ENDPOINTS.build(ENDPOINTS.URL.CALCULATE_TDS), request);
+				ApiResponse response = super.postForGet(
+				        ENDPOINTS.build(ENDPOINTS.URL.CALCULATE_TDS, Environment.get(sessionCredentials.getApiKey())),
+				        request);
+
 				return response.get("data");
 			}
 			catch (final IOException e)

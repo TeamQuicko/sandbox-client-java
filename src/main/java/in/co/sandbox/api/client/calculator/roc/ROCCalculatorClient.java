@@ -16,6 +16,7 @@ import in.co.sandbox.api.beans.ApiResponse;
 import in.co.sandbox.api.client.RestClient;
 import in.co.sandbox.api.exception.SandboxException;
 import in.co.sandbox.api.types.ENDPOINTS;
+import in.co.sandbox.api.types.ENDPOINTS.Environment;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -64,7 +65,8 @@ public class ROCCalculatorClient extends RestClient
 			{
 
 				ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.CALCULATE_COMPANY_REGISTRATION_COST,
-				        incorporation_class, state, directors, share_capital));
+				        Environment.get(sessionCredentials.getApiKey()), incorporation_class, state, directors,
+				        share_capital));
 
 				return response.get("data");
 
@@ -106,7 +108,8 @@ public class ROCCalculatorClient extends RestClient
 			{
 
 				ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.CALCULATE_PARTNERSHIP_REGISTRATION_COST,
-				        incorporation_class, state, partners, contribution));
+				        Environment.get(sessionCredentials.getApiKey()), incorporation_class, state, partners,
+				        contribution));
 
 				return response.get("data");
 

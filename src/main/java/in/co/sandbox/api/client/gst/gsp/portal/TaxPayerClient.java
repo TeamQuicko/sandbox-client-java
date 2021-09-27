@@ -15,6 +15,7 @@ import in.co.sandbox.api.beans.ApiResponse;
 import in.co.sandbox.api.client.RestClient;
 import in.co.sandbox.api.exception.SandboxException;
 import in.co.sandbox.api.types.ENDPOINTS;
+import in.co.sandbox.api.types.ENDPOINTS.Environment;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -50,8 +51,8 @@ public class TaxPayerClient extends RestClient
 
 		try
 		{
-			ApiResponse response =
-			        super.postForGet(ENDPOINTS.build(ENDPOINTS.URL.GST_PORTAL_GENERATE_OTP, gstin), null);
+			ApiResponse response = super.postForGet(ENDPOINTS.build(ENDPOINTS.URL.GST_PORTAL_GENERATE_OTP,
+			        Environment.get(sessionCredentials.getApiKey()), gstin), null);
 
 			return response.get("data");
 		}
@@ -78,8 +79,8 @@ public class TaxPayerClient extends RestClient
 
 		try
 		{
-			ApiResponse response =
-			        super.postForGet(ENDPOINTS.build(ENDPOINTS.URL.GST_PORTAL_VERIFY_OTP, gstin, otp), null);
+			ApiResponse response = super.postForGet(ENDPOINTS.build(ENDPOINTS.URL.GST_PORTAL_VERIFY_OTP,
+			        Environment.get(sessionCredentials.getApiKey()), gstin, otp), null);
 
 			return response.get("data");
 		}

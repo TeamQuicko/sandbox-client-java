@@ -1,5 +1,5 @@
 /**
- * Copyright Jun 10, 2021, Quicko.
+ * Copyright Sep 27, 2021, Quicko.
  * All Rights Reserved.
  * Confidential Information
  * Authored by Harsh Bagadia
@@ -8,7 +8,6 @@ package in.co.sandbox.api.client.gst.gsp;
 
 import java.io.IOException;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import in.co.sandbox.api.auth.ApiSessionCredentials;
@@ -16,6 +15,7 @@ import in.co.sandbox.api.beans.ApiResponse;
 import in.co.sandbox.api.client.RestClient;
 import in.co.sandbox.api.exception.SandboxException;
 import in.co.sandbox.api.types.ENDPOINTS;
+import in.co.sandbox.api.types.ENDPOINTS.Environment;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -53,7 +53,8 @@ public class PublicClient extends RestClient
 
 		try
 		{
-			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.TRACK_GST_RETURN, gstin, financialYear));
+			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.TRACK_GST_RETURN,
+			        Environment.get(sessionCredentials.getApiKey()), gstin, financialYear));
 			return response.get("data");
 		}
 		catch (final IOException e)
@@ -77,7 +78,9 @@ public class PublicClient extends RestClient
 
 		try
 		{
-			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.SEARCH_GSTIN, gstin));
+			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.SEARCH_GSTIN,
+			        Environment.get(sessionCredentials.getApiKey()), gstin));
+
 			return response.get("data");
 		}
 		catch (final IOException e)
@@ -90,21 +93,26 @@ public class PublicClient extends RestClient
 	/**
 	 * Search gstin by pan.
 	 *
+	 * @param <T>
+	 *            the generic type
 	 * @param pan
 	 *            the pan
 	 * @param stateCode
 	 *            the state code
-	 * @return the JSON array
+	 * @return the t
 	 * @throws SandboxException
 	 *             the sandbox exception
 	 */
-	public JSONArray searchGstinByPan(final String pan, final String stateCode) throws SandboxException
+	public <T> T searchGstinByPan(final String pan, final String stateCode) throws SandboxException
 	{
 
 		try
 		{
-			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.SEARCH_GSTIN_BY_PAN, pan, stateCode));
+			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.SEARCH_GSTIN_BY_PAN,
+			        Environment.get(sessionCredentials.getApiKey()), pan, stateCode));
+
 			return response.get("data");
+
 		}
 		catch (final IOException e)
 		{

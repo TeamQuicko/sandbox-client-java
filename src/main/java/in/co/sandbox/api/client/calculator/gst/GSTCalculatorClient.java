@@ -15,6 +15,7 @@ import in.co.sandbox.api.beans.ApiResponse;
 import in.co.sandbox.api.client.RestClient;
 import in.co.sandbox.api.exception.SandboxException;
 import in.co.sandbox.api.types.ENDPOINTS;
+import in.co.sandbox.api.types.ENDPOINTS.Environment;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -50,7 +51,9 @@ public class GSTCalculatorClient extends RestClient
 
 		try
 		{
-			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.GST_ITEM_CODE_LOOKUP, key));
+			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.GST_ITEM_CODE_LOOKUP,
+			        Environment.get(sessionCredentials.getApiKey()), key));
+
 			return response.get("data");
 		}
 		catch (final IOException e)

@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.2 - 27-09-2021
+* Support for UAT environment
+* Used generic return type for Search GSTIN by PAN method
+
 ## v1.0.1 - 17-09-2021
 *  latest artifact for maven central
 

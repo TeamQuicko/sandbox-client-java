@@ -15,6 +15,7 @@ import in.co.sandbox.api.beans.ApiResponse;
 import in.co.sandbox.api.client.RestClient;
 import in.co.sandbox.api.exception.SandboxException;
 import in.co.sandbox.api.types.ENDPOINTS;
+import in.co.sandbox.api.types.ENDPOINTS.Environment;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -49,7 +50,8 @@ public class BankClient extends RestClient
 	{
 		try
 		{
-			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.FETCH_BANK_DETAILS_BY_IFSC, ifsc));
+			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.FETCH_BANK_DETAILS_BY_IFSC,
+			        Environment.get(sessionCredentials.getApiKey()), ifsc));
 
 			return response.get("data");
 		}
@@ -81,8 +83,8 @@ public class BankClient extends RestClient
 
 		try
 		{
-			ApiResponse response =
-			        super.get(ENDPOINTS.build(ENDPOINTS.URL.VERIFY_BANK_ACCOUNT, ifsc, accountNumber, name, mobile));
+			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.VERIFY_BANK_ACCOUNT,
+			        Environment.get(sessionCredentials.getApiKey()), ifsc, accountNumber, name, mobile));
 
 			return response.get("data");
 		}

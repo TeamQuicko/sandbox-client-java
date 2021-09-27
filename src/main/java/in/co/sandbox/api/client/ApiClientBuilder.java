@@ -17,6 +17,7 @@ import in.co.sandbox.api.auth.ApiUserCredentials;
 import in.co.sandbox.api.auth.OAuthSessionCredentials;
 import in.co.sandbox.api.exception.SandboxException;
 import in.co.sandbox.api.types.ENDPOINTS;
+import in.co.sandbox.api.types.ENDPOINTS.Environment;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -222,11 +223,12 @@ public final class ApiClientBuilder
 
 			final RequestBody requestBody = builder.build();
 
-			final Request request =
-			        new Request.Builder().url(ENDPOINTS.build(ENDPOINTS.URL.AUTHENTICATE)).post(requestBody)
-			                .header("User-Agent", USER_AGENT).header("x-api-key", apiUserCredentials.getApiKey())
-			                .header("x-api-secret", apiUserCredentials.getApiSecret())
-			                .header("x-api-version", API_VERSION).build();
+			final Request request = new Request.Builder()
+			        .url(ENDPOINTS.build(ENDPOINTS.URL.AUTHENTICATE, Environment.get(apiUserCredentials.getApiKey())))
+			        .post(requestBody).header("User-Agent", USER_AGENT)
+			        .header("x-api-key", apiUserCredentials.getApiKey())
+			        .header("x-api-secret", apiUserCredentials.getApiSecret()).header("x-api-version", API_VERSION)
+			        .build();
 
 			final Response response = client.newCall(request).execute();
 
@@ -270,10 +272,12 @@ public final class ApiClientBuilder
 
 			final RequestBody requestBody = builder.build();
 
-			final Request request =
-			        new Request.Builder().url(ENDPOINTS.build(ENDPOINTS.URL.AUTHORIZE, requestToken)).post(requestBody)
-			                .header("User-Agent", USER_AGENT).header("x-api-key", apiUserCredentials.getApiKey())
-			                .header("Authorization", requestToken).header("x-api-version", API_VERSION).build();
+			final Request request = new Request.Builder()
+			        .url(ENDPOINTS.build(ENDPOINTS.URL.AUTHORIZE, Environment.get(apiUserCredentials.getApiKey()),
+			                requestToken))
+			        .post(requestBody).header("User-Agent", USER_AGENT)
+			        .header("x-api-key", apiUserCredentials.getApiKey()).header("Authorization", requestToken)
+			        .header("x-api-version", API_VERSION).build();
 
 			final Response response = client.newCall(request).execute();
 
@@ -321,9 +325,11 @@ public final class ApiClientBuilder
 			final RequestBody requestBody = builder.build();
 
 			final Request request = new Request.Builder()
-			        .url(ENDPOINTS.build(ENDPOINTS.URL.OAUTH_AUTHORIZE, requestToken)).post(requestBody)
-			        .header("User-Agent", USER_AGENT).header("x-api-key", apiUserCredentials.getApiKey())
-			        .header("Authorization", accessToken).header("x-api-version", API_VERSION).build();
+			        .url(ENDPOINTS.build(ENDPOINTS.URL.OAUTH_AUTHORIZE, Environment.get(apiUserCredentials.getApiKey()),
+			                requestToken))
+			        .post(requestBody).header("User-Agent", USER_AGENT)
+			        .header("x-api-key", apiUserCredentials.getApiKey()).header("Authorization", accessToken)
+			        .header("x-api-version", API_VERSION).build();
 
 			final Response response = client.newCall(request).execute();
 

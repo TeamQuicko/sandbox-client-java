@@ -19,12 +19,6 @@ import in.co.sandbox.api.utils.FilterUtils;
 public final class ENDPOINTS
 {
 
-	/** The Constant PROD_API_ENDPOINT. */
-	public static final String PROD_API_ENDPOINT = "https://api.sandbox.co.in";
-
-	/** The Constant LOCAL_API_ENDPOINT. */
-	public static final String LOCAL_API_ENDPOINT = "http://localhost:8080/api-services";
-
 	/**
 	 * Build.
 	 *
@@ -35,9 +29,9 @@ public final class ENDPOINTS
 	 * @return the string
 	 */
 	@SuppressWarnings({"unchecked", "rawtypes"})
-	public static String build(final URL endpoint, final Object... args)
+	public static String build(final URL endpoint, final Environment env, final Object... args)
 	{
-		String url = new StringBuilder().append(PROD_API_ENDPOINT).append(endpoint.getValue()).toString();
+		String url = new StringBuilder().append(env.getHost()).append(endpoint.getValue()).toString();
 
 		String regex = "\\{(\\w*)\\}";
 
@@ -68,6 +62,60 @@ public final class ENDPOINTS
 
 		return url.toString();
 
+	}
+
+	/**
+	 * The Enum Environment.
+	 */
+	public enum Environment
+	{
+
+		/** PROD API ENDPOINT. */
+		PROD("https://api.sandbox.co.in"),
+
+		/** UAT API ENDPOINT. */
+		UAT("https://test-api.sandbox.co.in"),
+
+		/** LOCAL API ENDPOINT. */
+		LOCAL("http://localhost:8080/api-services");
+
+		public static Environment get(String apiKey)
+		{
+
+			switch (apiKey.split("_")[1])
+			{
+				case "live":
+					return Environment.PROD;
+				case "test":
+					return Environment.UAT;
+				default:
+					return Environment.PROD;
+			}
+		}
+
+		/** The host. */
+		private final String host;
+
+		/**
+		 * Instantiates a new host.
+		 *
+		 * @param value
+		 *            the value
+		 */
+		Environment(final String host)
+		{
+			this.host = host;
+		}
+
+		/**
+		 * Gets the host.
+		 *
+		 * @return the host
+		 */
+		public String getHost()
+		{
+			return this.host;
+		}
 	}
 
 	/**

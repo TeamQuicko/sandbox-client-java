@@ -16,6 +16,7 @@ import in.co.sandbox.api.beans.PAN;
 import in.co.sandbox.api.client.RestClient;
 import in.co.sandbox.api.exception.SandboxException;
 import in.co.sandbox.api.types.ENDPOINTS;
+import in.co.sandbox.api.types.ENDPOINTS.Environment;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -55,7 +56,9 @@ public class PANClient extends RestClient
 
 		try
 		{
-			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.VERIFY_PAN, pan, consent, reason));
+			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.VERIFY_PAN,
+			        Environment.get(sessionCredentials.getApiKey()), pan, consent, reason));
+
 			return new PAN(response.get("data"));
 		}
 		catch (final IOException e)
@@ -82,7 +85,9 @@ public class PANClient extends RestClient
 
 		try
 		{
-			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.GET_PAN, pan, consent, reason));
+			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.GET_PAN,
+			        Environment.get(sessionCredentials.getApiKey()), pan, consent, reason));
+
 			return new PAN(response.get("data"));
 		}
 		catch (final IOException e)
@@ -108,8 +113,9 @@ public class PANClient extends RestClient
 
 		try
 		{
-			ApiResponse response =
-			        super.get(ENDPOINTS.build(ENDPOINTS.URL.GET_PAN_AADHAAR_LINK_STATUS, pan, aadharNumber));
+			ApiResponse response = super.get(ENDPOINTS.build(ENDPOINTS.URL.GET_PAN_AADHAAR_LINK_STATUS,
+			        Environment.get(sessionCredentials.getApiKey()), pan, aadharNumber));
+
 			return response.get("data");
 		}
 		catch (IOException e)

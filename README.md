@@ -24,7 +24,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>in.co.sandbox</groupId>
     <artifactId>api-client-java</artifactId>
-    <version>1.0.1-BUILD-RELEASE</version>
+    <version>1.0.2-BUILD-RELEASE</version>
 </dependency>
 ```
 
