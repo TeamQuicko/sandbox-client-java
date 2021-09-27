@@ -23,7 +23,7 @@ public class ApiClientExample
 			                "secret_live_ni*****************************p"))
 			        .build();
 
-			String pan = "XXXPX1234";
+			String pan = "XXXPX1234X";
 			String consent = "Y";
 			String reason = "For opening Demat account";
 
